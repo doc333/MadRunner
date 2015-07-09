@@ -50,13 +50,18 @@ public class FullscreenActivity extends Activity {
      */
     private SystemUiHider mSystemUiHider;
 
+
+
+    private Runner runner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_fullscreen);
 
-        final View contentView = findViewById(R.id.runner_content);
+        final View contentView = findViewById(R.id.imageViewRunner);
+        final View layout = findViewById(R.id.layout);
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
@@ -84,7 +89,7 @@ public class FullscreenActivity extends Activity {
                     }
                 });
 
-        final Runner runner = new Runner(this, R.id.runner_content, new float[]{});
+        runner = new Runner(this, R.id.imageViewRunner, new float[]{});
         Game game = new Game(runner);
 
         game.play();
@@ -98,6 +103,17 @@ public class FullscreenActivity extends Activity {
 
             }
         });
+
+        // Set up the user interaction to manually show or hide the system UI.
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                runner.jump();
+
+            }
+        });
+
     }
 
     @Override
@@ -110,20 +126,6 @@ public class FullscreenActivity extends Activity {
         delayedHide(100);
     }
 
-    /**
-     * Touch listener to use for in-layout UI controls to delay hiding the
-     * system UI. This is to prevent the jarring behavior of controls going away
-     * while interacting with activity UI.
-     */
-    View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
-        @Override
-        public boolean onTouch(View view, MotionEvent motionEvent) {
-            if (AUTO_HIDE) {
-                delayedHide(AUTO_HIDE_DELAY_MILLIS);
-            }
-            return false;
-        }
-    };
 
     Handler mHideHandler = new Handler();
     Runnable mHideRunnable = new Runnable() {

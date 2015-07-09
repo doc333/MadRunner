@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:background="#ff6ea1f7"
-    tools:context=".FullscreenActivity">
+    tools:context=".FullscreenActivity" android:id="@+id/layout">
 
     <ImageView android:id="@+id/imageViewRunner"
         android:layout_width="wrap_content"

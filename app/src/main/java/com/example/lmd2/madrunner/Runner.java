@@ -20,7 +20,7 @@ public class Runner extends Element {
     }
 
     public void jump() {
-        View runner = getActivity().findViewById(R.id.runner_content);
+        View runner = getActivity().findViewById(R.id.imageViewRunner);
 
         AnimationSet s = new AnimationSet(false);
         s.setDuration(900);
