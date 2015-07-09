@@ -9,6 +9,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AnimationSet;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.TranslateAnimation;
 
 
 /**
@@ -52,7 +56,6 @@ public class FullscreenActivity extends Activity {
 
         setContentView(R.layout.activity_fullscreen);
 
-        final View controlsView = findViewById(R.id.fullscreen_content_controls);
         final View contentView = findViewById(R.id.fullscreen_content);
 
         // Set up an instance of SystemUiHider to control the system UI for
@@ -85,11 +88,32 @@ public class FullscreenActivity extends Activity {
         contentView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (TOGGLE_ON_CLICK) {
-                    mSystemUiHider.toggle();
-                } else {
-                    mSystemUiHider.show();
-                }
+
+                View runner = findViewById(R.id.fullscreen_content);
+                System.out.println("izefjzeojfize");
+
+                AnimationSet s = new AnimationSet(false);
+                s.setDuration(900);
+                TranslateAnimation translation;
+
+                translation = new TranslateAnimation(0f, 0F, 0f, -150);
+                translation.setFillAfter(true);
+
+                translation.setInterpolator(new AccelerateDecelerateInterpolator());
+
+
+                TranslateAnimation translation2;
+
+                translation2 = new TranslateAnimation(0f, 0F, 0f, 150);
+                translation2.setFillAfter(true);
+
+                translation2.setInterpolator(new AccelerateInterpolator());
+
+                s.addAnimation(translation);
+                s.addAnimation(translation2);
+
+                runner.startAnimation(s);
+
             }
         });
     }
@@ -104,6 +128,17 @@ public class FullscreenActivity extends Activity {
         delayedHide(100);
     }
 
+    /**
+     * Touch listener to use for in-layout UI controls to delay hiding the
+     * system UI. This is to prevent the jarring behavior of controls going away
+     * while interacting with activity UI.
+     */
+    View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+        }
+    };
 
     /**
      * Touch listener to use for in-layout UI controls to delay hiding the
