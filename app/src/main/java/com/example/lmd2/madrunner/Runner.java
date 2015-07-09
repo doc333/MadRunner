@@ -12,4 +12,8 @@ public class Runner extends Element {
         super(0, 50, R.mipmap.runner);
         this.hitBox = hitBox;
     }
+
+    public void jump() {
+
+    }
 }

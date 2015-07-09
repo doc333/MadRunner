@@ -96,7 +96,7 @@ public class FullscreenActivity extends Activity {
                 s.setDuration(900);
                 TranslateAnimation translation;
 
-                translation = new TranslateAnimation(0f, 0F, 0f, -150);
+                translation = new TranslateAnimation(0f, 0F, 0f, -1000);
                 translation.setFillAfter(true);
 
                 translation.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -104,7 +104,7 @@ public class FullscreenActivity extends Activity {
 
                 TranslateAnimation translation2;
 
-                translation2 = new TranslateAnimation(0f, 0F, 0f, 150);
+                translation2 = new TranslateAnimation(0f, 0F, 0f, 1000);
                 translation2.setFillAfter(true);
 
                 translation2.setInterpolator(new AccelerateInterpolator());
