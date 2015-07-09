@@ -85,6 +85,9 @@ public class FullscreenActivity extends Activity {
                 });
 
         final Runner runner = new Runner(this, R.id.runner_content, new float[]{});
+        Game game = new Game(runner);
+
+        game.play();
 
         // Set up the user interaction to manually show or hide the system UI.
         contentView.setOnClickListener(new View.OnClickListener() {
@@ -106,18 +109,6 @@ public class FullscreenActivity extends Activity {
         // are available.
         delayedHide(100);
     }
-
-    /**
-     * Touch listener to use for in-layout UI controls to delay hiding the
-     * system UI. This is to prevent the jarring behavior of controls going away
-     * while interacting with activity UI.
-     */
-    View.OnClickListener clickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-
-        }
-    };
 
     /**
      * Touch listener to use for in-layout UI controls to delay hiding the

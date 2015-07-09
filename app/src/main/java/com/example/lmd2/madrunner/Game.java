@@ -7,8 +7,7 @@ public class Game {
     private int score = 0;
     private Runner runner;
 
-    public Game(int score, Runner runner) {
-        this.score = score;
+    public Game(Runner runner) {
         this.runner = runner;
     }
 
