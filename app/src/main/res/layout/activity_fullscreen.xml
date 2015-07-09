@@ -1,14 +1,50 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="#eef7a0"
+    android:layout_height="match_parent" android:background="#ff6ea1f7"
     tools:context=".FullscreenActivity">
 
-    <ImageView android:id="@+id/runner_content"
+    <ImageView android:id="@+id/imageViewRunner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/runner"
         android:gravity="center"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
+
+    <ImageView android:id="@+id/imageViewGrass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/grass"
+        android:gravity="center"
+        android:layout_alignBottom="@+id/imageViewRunner"
+        android:layout_alignEnd="@+id/imageViewCloud" />
+    <ImageView android:id="@+id/imageViewGreenTree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/green_tree"
+        android:gravity="center"
+        android:layout_alignTop="@+id/imageViewAbstractTree"
+        android:layout_centerHorizontal="true" />
+    <ImageView android:id="@+id/imageViewAbstractTree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/abstract_tree"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/imageViewRunner" />
+    <ImageView android:id="@+id/imageViewBird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/bird"
+        android:gravity="center"
+        android:layout_below="@+id/imageViewCloud"
+        android:layout_alignParentEnd="true" />
+    <ImageView android:id="@+id/imageViewCloud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/cloud"
+        android:gravity="center"
+        android:layout_above="@+id/imageViewAbstractTree"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
