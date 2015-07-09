@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Mad Runner</string>
-
+    <string name="play_button_label">Play</string>
+    <string name="quit_button_label">Quit</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
