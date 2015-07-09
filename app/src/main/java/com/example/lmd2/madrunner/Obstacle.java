@@ -9,11 +9,12 @@ public class Obstacle extends Element {
     private static int imageIds[] = {};
 
     public Obstacle(float positionX, float positionY, float[] hitBox) {
+        super(positionX, positionY, 0);
         int id = (int)(Math.random() * this.imageIds.length);
-        super(positionX, positionY, imageIds[id]);
+        this.setImageId(imageIds[id]);
         this.hitBox = hitBox;
     }
-    
+
     public float[] getHitBox() {
         return hitBox;
     }

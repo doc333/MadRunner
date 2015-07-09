@@ -10,7 +10,8 @@ public class Decor extends Element {
     private static int imageIds[] = {};
 
     public Decor(float positionX, float positionY) {
+        super(positionX, positionY, 0);
         int id = (int)(Math.random() * this.imageIds.length);
-        super(positionX, positionY, imageIds[id]);
+        this.setImageId(imageIds[id]);
     }
 }
