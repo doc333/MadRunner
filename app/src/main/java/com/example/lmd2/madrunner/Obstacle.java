@@ -1,5 +1,7 @@
 package com.example.lmd2.madrunner;
 
+import android.app.Activity;
+
 /**
  * Created by LMD2 on 09/07/2015.
  */
@@ -8,10 +10,10 @@ public class Obstacle extends Element {
 
     private static int imageIds[] = {};
 
-    public Obstacle(float positionX, float positionY, float[] hitBox) {
-        super(positionX, positionY, 0);
+    public Obstacle(Activity activity, float positionX, float positionY, float[] hitBox) {
+        super(activity, positionX, positionY, 0);
         int id = (int)(Math.random() * this.imageIds.length);
-        this.setImageId(imageIds[id]);
+        this.setImageViewId(imageIds[id]);
         this.hitBox = hitBox;
     }
 

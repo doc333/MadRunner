@@ -56,7 +56,7 @@ public class FullscreenActivity extends Activity {
 
         setContentView(R.layout.activity_fullscreen);
 
-        final View contentView = findViewById(R.id.fullscreen_content);
+        final View contentView = findViewById(R.id.runner_content);
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
@@ -84,35 +84,14 @@ public class FullscreenActivity extends Activity {
                     }
                 });
 
+        final Runner runner = new Runner(this, R.id.runner_content, new float[]{});
+
         // Set up the user interaction to manually show or hide the system UI.
         contentView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                View runner = findViewById(R.id.fullscreen_content);
-                System.out.println("izefjzeojfize");
-
-                AnimationSet s = new AnimationSet(false);
-                s.setDuration(900);
-                TranslateAnimation translation;
-
-                translation = new TranslateAnimation(0f, 0F, 0f, -1000);
-                translation.setFillAfter(true);
-
-                translation.setInterpolator(new AccelerateDecelerateInterpolator());
-
-
-                TranslateAnimation translation2;
-
-                translation2 = new TranslateAnimation(0f, 0F, 0f, 1000);
-                translation2.setFillAfter(true);
-
-                translation2.setInterpolator(new AccelerateInterpolator());
-
-                s.addAnimation(translation);
-                s.addAnimation(translation2);
-
-                runner.startAnimation(s);
+                runner.jump();
 
             }
         });
