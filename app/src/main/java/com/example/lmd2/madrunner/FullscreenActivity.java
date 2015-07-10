@@ -95,7 +95,7 @@ public class FullscreenActivity extends Activity {
                 });
 
         runner = new Runner(this, R.id.imageViewRunner, new float[]{});
-        Game game = new Game(runner);
+        Game game = new Game(this, runner);
 
         game.play();
 

@@ -1,52 +1,58 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ff6ea1f7"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="1500dp"
     android:layout_height="match_parent" android:orientation="vertical"
     tools:context=".FullscreenActivity" android:id="@+id/layout">
 
-    <GridLayout
-        android:layout_height="200dp"
-        android:background="#ff6ea1f7"
-        android:layout_width="fill_parent">
-
-        <ImageView android:id="@+id/imageViewGreenTree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/green_tree" />
-
-        <ImageView android:id="@+id/imageViewCloud"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/cloud" />
-
-        <ImageView android:id="@+id/imageViewBird"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/bird" />
-
-        <ImageView android:id="@+id/imageViewGrass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/grass"
-            android:layout_gravity="bottom" />
-
-        <ImageView android:id="@+id/imageViewRunner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/runner"
-            android:layout_gravity="bottom"/>
-    </GridLayout>
-
-    <GridLayout
+    <LinearLayout
+        android:layout_gravity="bottom"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="200dp"
         android:background="#ffccff82">
 
-        <ImageView android:id="@+id/imageViewAbstractTree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/abstract_tree"
-            android:gravity="center"
-            android:layout_marginStart="139dp" />
-    </GridLayout>
+    </LinearLayout>
 
-</LinearLayout>
+    <ImageView android:id="@+id/imageViewGrass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/grass"
+        android:layout_marginBottom="200dp"
+        android:layout_gravity="right|bottom" />
+
+    <ImageView android:id="@+id/imageViewCloud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/cloud"
+        android:layout_gravity="right|top" />
+
+    <ImageView android:id="@+id/imageViewBird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/bird"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="right|top" />
+
+    <ImageView android:id="@+id/imageViewRunner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/runner"
+        android:layout_marginBottom="200dp"
+        android:layout_gravity="left|bottom" />
+
+    <ImageView android:id="@+id/imageViewAbstractTree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/abstract_tree"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="right|bottom" />
+
+    <ImageView android:id="@+id/imageViewGreenTree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/green_tree"
+        android:layout_marginBottom="100dp"
+        android:layout_gravity="right|bottom" />
+
+
+
+</FrameLayout>
