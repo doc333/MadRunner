@@ -55,6 +55,11 @@ public class FullscreenActivity extends Activity {
     private Runner runner;
 
     @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -98,9 +103,7 @@ public class FullscreenActivity extends Activity {
         contentView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 runner.jump();
-
             }
         });
 
